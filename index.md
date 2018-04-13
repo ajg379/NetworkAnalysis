@@ -18,49 +18,30 @@ A quick aside about a Bitcoin transaction.  Unlike sending $30 from my bank to W
 
 This sampling technique does not have an effect of the trends that would emerge from the network.  For instance, a transaction from 1 sender to 1 receiver would not be disproportitely represented in the network since these are on the transaction level not the overall degree level.  I wish I could have included more nodes in the network but unfortunately even storing only the sender and receiver as integers was still on the order of Gb's for the sample from 2017.  My sampling technique was effective in reducing the dataset to a managable level, around 500 Mb for 2017.  I know what you might be thining, "You have 32 Gb of RAM why can't you handle a larger dataset".  While it would make sense that with this level of data I could import a much larger subset of the Bitcoin netowrk, when loading the edge list into NetworkX, that 500Mb edge list turns into a 29 Gb NetworkX object and taking into account other OS processes, all my RAM gets taken and paging starts.  With all this being said sampling was successful and I got as much data as I could given restrictions. 
 
-From 
+Another way I broke the Bitcion blockchain into smaller pieces was create an edge list for each year.  This not only made the size of the dataset even more managable but it also gave me a time domain that would be very useful when tryign to evaluate whether or not the currency was growing.   Each year is more extensive than the last but luckily we are early into 2018 so memory usage shoudle managable. 
 
+After sampling, different analysis could be done on the network to bring to light any trends that could shed light on the adoption of Bitcoin.  Obvious metrics such as average degree, number of nodes, and number of edges were calculated.  This offered some useful information but it didn't help when trying to identify usage information.  So I also introduced a calculation to identify all nodes that were a part of a 2 node network.  With my method of sampling it left the majority of nodes in a configuration where node A has only one neighbor B and B's only neighbor is also A.  I suspected this would be the case so I wrote a method to find all sub netowrks which only has 2 nodes.  
 
+After some reflection the values I was getting out of these calculations, I realized that the Bitcoin exchanges were skewing the results.  To convert a fiat currency into Bitcion, the transfer usually goes through a exchange so if thousands of people were trading their USDs into Bitcoin, certain nodes would have a tremendous number of edges.  There is also an edge case of user that I wanted to exclude from my calculations and that is Bitcoin traders.  These people have no intention of using Bitcoin as a currency but more as a vehicle to make a capital gain.  The method I went about removing these people was to cull the network of all nodes whose degree was greater than 4 or 5 standard deviations from the mean.  As I tried different standard deviations I wanted to make sure that the vast majority of money-transfering transactions were removed while keeping as many suspected purchases intact.  A standard deviation of 4 was used for 2012-2015 networks as the average removed node had around a degree of 150-200 where 5 was used for 2016-present.  Since 2016 the volume of trading for capital gains skyrocketed and as such I needed a higher threshhold to make sure the nodes with a degree of 500+ were not tainting my results.  
 
-The innerworking of Bitcion are closely related to other forms of crypto currencies but the track recor
+All the graph metrics highlighted in the previous sections are now run on both the graph with all nodes intact as well as the graph in which the nodes with high degrees were removed. I have included the results below but I am still runnning qualitative metrics on the data I have gathered.  
 
+This image is what the majority of the network looks like.  Many 2 node relationships.
+<img src="regular.png" alt="2 node network" class="inline"/>
 
+This is what a hub in the network looks like.  It is impossible to tell if this node is a single person who has a lot of trading activity or an exchange but this node has fewer than 100 edges so it is likely it is a single person.
+<img src="hub.png" alt="hub" class="inline"/>
 
+This table illustrates the similarity of sender/receiver from one year to any other year. 
 
+|      | 2012  | 2013   | 2014   | 2015   | 2016   | 2017   | 2018   | 
+| ---- | ----- | ------ | ------ | ------ | ------ | ------ | ------ |
+| 2012 | -1    | 12412  | 4024   | 1524   | 983    | 1016   | 200    | 
+| 2013 | 12412 | -1     | 105717 | 24277  | 12637  | 11408  | 1998   |
+| 2014 | 4024  | 105717 | -1     | 179016 | 63101  | 38839  | 6828   |
+| 2015 | 1524  | 24277  | 179016 | -1     | 376882 | 100899 | 17158  |
+| 2016 | 983   | 12637  | 63101  | 376882 | -1     | 474432 | 43474  |
+| 2017 | 1016  | 11408  | 38839  | 100899 | 474432 | -1     | 341469 |
+| 2018 | 200   | 1998   | 6828   | 17158  | 43474  | 341469 | -1     |
 
-
-You can use the [editor on GitHub](https://github.com/ajg379/NetworkAnalysis/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ajg379/NetworkAnalysis/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The rest of the data is still raw but it is being used to calculate the level by which teh Bitcoin network is maturing.  
