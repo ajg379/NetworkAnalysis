@@ -31,7 +31,7 @@ All the graph metrics highlighted in the previous sections are now run on both t
 This image is what the majority of the network looks like.  Many 2 node relationships.
 <img src="regular.png" alt="2 node network" class="inline"/>
 
-This is what a hub in the network looks like.  It is impossible to tell if this node is a single person who has a lot of trading activity or an exchange but this node has fewer than 100 edges so it is likely it is a single person.
+This is what a hub in the network looks like.  It is impossible to tell which type of node this is given that its connections are around the number I would suspect as a trader.  That being said, I a node with around 40 connections could very well be a person who goes to a coffee shop that accepts Bitcoin frequently.
 <img src="hub.png" alt="hub" class="inline"/>
 
 This table illustrates the similarity of sender/receiver from one year to any other year. 
