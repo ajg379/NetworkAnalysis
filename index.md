@@ -53,9 +53,9 @@ More results are being formed but for now this is the only one I have as of now.
 ## Notebooks
 I didn't use Jupyter given it is not suitable for actual programming but here are the notebooks that could be used given you have a month to import data.  
 <a href="importing.ipynb">Crawling the blockchain</a>
+
 <a href="calculations.ipynb">Doing calculations with the data</a>
 
 ## Data Used
 While crawling throuigh the blockchain I used a library to get access to the blockchain but with a process running for each year I was sampling, I would get timed out and be forced to wait until I was allowed to start downloading data again.  It took days but the result for a given year was an edge list with each node being a 512 bit hash string.  This was impossible to use in its surrent form so I created a mapping from the hash addresses to integers so I could get each address from 512 bits to 8.  The link below is to the sampled graphs in integer form as well as the address maps from hash address to integer.  The integer graphs is 350Mb and the address maps are  
-<a href="https://drive.google.com/drive/folders/1fvgccCi_O0XIFn-4q4rPNXq-VVJk_L5u?usp=sharing">https://drive.google.com/drive/folders/1fvgccCi_O0XIFn-4q4rPNXq-VVJk_L5u?usp=sharing</a>
-https://drive.google.com/drive/folders/1fvgccCi_O0XIFn-4q4rPNXq-VVJk_L5u?usp=sharing
+usp=sharing">https://drive.google.com/drive/folders/1fvgccCi_O0XIFn-4q4rPNXq-VVJk_L5u?usp=sharing</a>
