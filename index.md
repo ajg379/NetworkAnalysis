@@ -61,3 +61,8 @@ While crawling throuigh the blockchain I used a library to get access to the blo
 
 <a href="https://drive.google.com/drive/folders/1cLgCZjkgU31o03giq46Hl_ORG_F_YUjy?usp=sharing">Sampled Network</a>
 
+## About
+Alex Grzesiak
+Major: Computer Science
+<img src="image000000 (1).jpg" class="img-responsive" alt="">
+
