@@ -64,5 +64,5 @@ While crawling throuigh the blockchain I used a library to get access to the blo
 ## About
 Alex Grzesiak
 Major: Computer Science
-<img src="image000000 (1).jpg" width="50" height="70">
+<img src="IMG_20170719_173552.jpg" width="150" height="200">
 
