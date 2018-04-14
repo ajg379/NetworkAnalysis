@@ -58,5 +58,6 @@ I didn't use Jupyter given it is not suitable for actual programming but here ar
 
 ## Data Used
 While crawling throuigh the blockchain I used a library to get access to the blockchain but with a process running for each year I was sampling, I would get timed out and be forced to wait until I was allowed to start downloading data again.  It took days but the result for a given year was an edge list with each node being a 512 bit hash string.  This was impossible to use in its surrent form so I created a mapping from the hash addresses to integers so I could get each address from 512 bits to 8.  The link below is to the sampled graphs in integer form.  The address maps are large files so I can upload these if needed but the smallest is  33Mb and the largest is 1.5Gb
+
 <a href="https://drive.google.com/drive/folders/1cLgCZjkgU31o03giq46Hl_ORG_F_YUjy?usp=sharing">Sampled Network</a>
 
