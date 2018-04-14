@@ -28,13 +28,15 @@ After some reflection the values I was getting out of these calculations, I real
 ## Preliminary Results
 All the graph metrics highlighted in the previous sections are now run on both the graph with all nodes intact as well as the graph in which the nodes with high degrees were removed. I have included the results below but I am still runnning qualitative metrics on the data I have gathered.  
 
-This image is what the majority of the network looks like.  Many 2 node relationships.
+In the next two figures, the red nodes are Bitcoin addresses from senders or receivers and the edges are transactions from two nodes.  
+
+This image is what the majority of the network looks like.  Many 2 node relationships.  The edge between two nodes is difficult to see but the sentiment remains that a vast majority of nodes exist in isolation with a single neighbor.  
 <img src="regular.png" alt="2 node network" class="inline"/>
 
 This is what a hub in the network looks like.  It is impossible to tell which type of node this is given that its connections are around the number I would suspect as a trader.  That being said, I a node with around 40 connections could very well be a person who goes to a coffee shop that accepts Bitcoin frequently.
 <img src="hub.png" alt="hub" class="inline"/>
 
-This table illustrates the similarity of sender/receiver from one year to any other year. 
+This table illustrates the similarity of sender/receiver from one year to any other year. From any given year to the next, the rollover of people using Bitcion is relatively high.  However, the rate at which people continue to use the currency for extended periods of time is low.  From 2014 to 2015 there were almost 200,000 people that kept using the currency in 2015.  But fast forward to 2017 and fewer than 50,000 continued to use it.  
 
 |      | 2012  | 2013   | 2014   | 2015   | 2016   | 2017   | 2018   | 
 | ---- | ----- | ------ | ------ | ------ | ------ | ------ | ------ |
@@ -46,4 +48,4 @@ This table illustrates the similarity of sender/receiver from one year to any ot
 | 2017 | 1016  | 11408  | 38839  | 100899 | 474432 |      | 341469 |
 | 2018 | 200   | 1998   | 6828   | 17158  | 43474  | 341469 |      |
 
-The rest of the data is still raw but it is being used to calculate the level by which teh Bitcoin network is maturing.  
+The rest of the data is still raw but it is being used to calculate the level by which the Bitcoin network is maturing.  
